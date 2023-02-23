@@ -150,7 +150,7 @@ class Home extends Component {
                 <Button>
                     GO TO NEXT PAGE
                     <BsArrowRightCircle className="off" />
-                        <BsArrowRightCircleFill className="on"/>
+                    <BsArrowRightCircleFill className="on"/>
                 </Button>
             </MaskWrapper>
         );
