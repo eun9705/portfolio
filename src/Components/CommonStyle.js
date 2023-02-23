@@ -32,12 +32,20 @@ export const GlobalStyle = createGlobalStyle`
         src : url(${NotoSansR}) format('opentype');
         font-weight:normal;
     }
-
     * { 
         font-family: NotoSansR, 맑은 고딕, sans-serif;
-        color: var(--main-font)
+        color: var(--main-font);
+        margin: 0;
+        padding: 0;
     }
     body { background-color: var(--background-color); }
+`;
+
+export const FlexBox = styled.div`
+    display:flex;
+    flex-direction: ${props =>  props.direction || "row" };
+    align-items: center;
+    justify-content: center;
 `;
     
 export const EngFont = css`
