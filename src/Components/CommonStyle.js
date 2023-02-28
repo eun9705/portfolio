@@ -3,14 +3,18 @@ import NotoSansB from "../fonts/NotoSansKR-Bold.otf";
 import NotoSansM from "../fonts/NotoSansKR-Medium.otf";
 import NotoSansR from "../fonts/NotoSansKR-Regular.otf";
 import BlackHan from "../fonts/BlackHanSans-Regular.ttf";
+import Shrikhand from '../fonts/Shrikhand-Regular.ttf';
+import Playball from '../fonts/Playball-Regular.ttf';
 
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        --main-font: #333333;
+        --main-font: #FFFFFF;
+        /* --main-font: #333333; */
         --sub-font: #AAAAAA;
         --background-color: #6E9FDD;
     }
+    
     @font-face {
         font-family: 'NotoSansB';
         src: local('NotoSansB'), local('NotoSansB');
@@ -32,24 +36,6 @@ export const GlobalStyle = createGlobalStyle`
         src : url(${NotoSansR}) format('opentype');
         font-weight:normal;
     }
-    * { 
-        font-family: NotoSansR, 맑은 고딕, sans-serif;
-        color: var(--main-font);
-        margin: 0;
-        padding: 0;
-    }
-    body { background-color: var(--background-color); }
-`;
-
-export const FlexBox = styled.div`
-    display:flex;
-    width: ${props => props.width || ''};
-    flex-direction: ${props =>  props.direction || "row" };
-    align-items: ${props => props.align || "center"};
-    justify-content: ${props => props.justify || "center"};;
-`;
-    
-export const EngFont = css`
     @font-face {
         font-family: 'BlackHan';
         src: local('BlackHan'), local('BlackHan');
@@ -57,5 +43,66 @@ export const EngFont = css`
         src : url(${BlackHan}) format('truetype');
         font-weight:normal;
     }
-    font-family: BlackHan, 맑은 고딕, sans-serif;
+    @font-face {
+        font-family: 'Shrikhand';
+        src: local('Shrikhand'), local('Shrikhand');
+        font-style: normal;
+        src : url(${Shrikhand}) format('truetype');
+        font-weight: normal;
+    }
+    @font-face {
+            font-family: 'Playball';
+            src: local('Playball'), local('Playball');
+            font-style: normal;
+            src : url(${Playball}) format('truetype');
+            font-weight:normal;
+        }
+    html{ 
+        font-family: NotoSansR, '맑은고딕', sans-serif;
+        font-size: 62.5%; //기본은 16px 하지만 사용자가 글꼴을 작거나 크게 보는 경우를 위해 font-size를 다음과 같이 설정함
+        color: var(--main-font);
+    }
+    * { margin: 0;padding: 0; }
+    body { background-color: var(--background-color);overflow:hidden; }
+    a { text-decoration: none; }
+    ol,li { list-style: none; }
+    button { border:none; }
+    @media screen and (max-width: 1280px){
+        html { font-size: 50%; }
+    }
+    @media screen and (max-width:992px) {
+        html { font-size: 25%; }
+    }
+`;
+
+export const FontFix = css`
+    font-family: ${props => props.font};
+    font-size: ${props => props.size};
+`;
+
+export const FlexBox = styled.div`
+    display:flex;
+    width: ${props => props.width || ''};
+    height: ${props => props.height || ''};
+    flex-direction: ${props =>  props.direction || "row" };
+    align-items: ${props => props.align || "center"};
+    justify-content: ${props => props.justify || "center"};;
+`;
+
+export const PositionBox = css`
+    position: ${props => props.position || 'absolute'};
+    ${props => {
+        if(props.value) {
+            return css`
+                left: ${props => props.value.left || ''};
+                top: ${props => props.value.top || ''};
+                right: ${props => props.value.right|| ''};
+                bottom: ${props => props.value.bottom|| ''};
+            `
+        }
+    }}
+`;
+    
+export const EngFont = css`
+    font-family: BlackHan, '맑은고딕', sans-serif;
 `
