@@ -43,9 +43,10 @@ export const GlobalStyle = createGlobalStyle`
 
 export const FlexBox = styled.div`
     display:flex;
+    width: ${props => props.width || ''};
     flex-direction: ${props =>  props.direction || "row" };
-    align-items: center;
-    justify-content: center;
+    align-items: ${props => props.align || "center"};
+    justify-content: ${props => props.justify || "center"};;
 `;
     
 export const EngFont = css`

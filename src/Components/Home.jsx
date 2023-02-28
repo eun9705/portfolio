@@ -96,16 +96,17 @@ const ImgBox = styled(FlexBox)`
 const Button = styled(FlexBox)`
     position: relative;
     margin-top: 10rem;
-    padding: 15px;
+    padding: 0.9375rem;
     cursor: pointer;
     border: 1px solid white;
     border-radius: 35px;
     font-family: 'NotoSansB', '맑은 고딕', 'sans-serif';
+    font-size: 0.875rem;
     color:white;
     letter-spacing: 0.05rem;
     svg {
-        width: 40px;
-        height: 40px;
+        width: 1.875rem;
+        height: 1.875rem;
         margin-left: 1.25rem;
         fill:white;
         transition: .3s;
@@ -126,6 +127,18 @@ const Button = styled(FlexBox)`
             
             opacity: 0; 
         }
+    }
+`;
+
+const LinkWrapper = styled(FlexBox)`
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 2.5rem;
+    padding: 0 2.5rem;
+    box-sizing: border-box;
+    p {
+        font-family: 'NotoSansB', '맑은고딕', 'sans-serif';
+        color:white;
     }
 `;
 
@@ -152,6 +165,10 @@ class Home extends Component {
                     <BsArrowRightCircle className="off" />
                     <BsArrowRightCircleFill className="on"/>
                 </Button>
+                <LinkWrapper>
+                    <p>NOTION</p>
+                    <p>GITHUB</p>
+                </LinkWrapper>
             </MaskWrapper>
         );
     }
