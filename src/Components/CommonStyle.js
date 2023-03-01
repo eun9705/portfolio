@@ -9,12 +9,12 @@ import Playball from '../fonts/Playball-Regular.ttf';
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        --main-font: #FFFFFF;
-        /* --main-font: #333333; */
-        --sub-font: #AAAAAA;
-        --background-color: #6E9FDD;
+        --white: #FFFFFF;
+        --black: var(--black);
+        --main-color: #6E9FDD;
+        --sub-color-01: #0E2F91;
+        --sub-color-02: #D2D5F0;
     }
-    
     @font-face {
         font-family: 'NotoSansB';
         src: local('NotoSansB'), local('NotoSansB');
@@ -57,14 +57,10 @@ export const GlobalStyle = createGlobalStyle`
             src : url(${Playball}) format('truetype');
             font-weight:normal;
         }
-    html{ 
-        font-family: NotoSansR, '맑은고딕', sans-serif;
-        font-size: 62.5%; //기본은 16px 하지만 사용자가 글꼴을 작거나 크게 보는 경우를 위해 font-size를 다음과 같이 설정함
-        color: var(--main-font);
-    }
-    * { margin: 0;padding: 0; }
-    body { background-color: var(--background-color);overflow:hidden; }
-    a { text-decoration: none; }
+    html{ font-size: 62.5%; } //기본은 16px 하지만 사용자가 글꼴을 작거나 크게 보는 경우를 위해 font-size를 다음과 같이 설정함
+    body { background-color: var(--main-color);overflow:hidden; }
+    * { margin: 0;padding: 0;font-family: NotoSansR, '맑은고딕', sans-serif;font-size:1.6rem;color: var(--white); }
+    a { text-decoration: none;color:var(--main-font); }
     ol,li { list-style: none; }
     button { border:none; }
     @media screen and (max-width: 1280px){
@@ -103,6 +99,6 @@ export const PositionBox = css`
     }}
 `;
     
-export const EngFont = css`
-    font-family: BlackHan, '맑은고딕', sans-serif;
-`
+export const MediumFont = css` font-family: 'NotoSansM', '맑은고딕', sans-serif;`
+
+export const BoldFont = css` font-family: 'NotoSansB', '맑은고딕', sans-serif;`
