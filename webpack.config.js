@@ -48,6 +48,8 @@ module.exports = (env, argv) => {
             }),
             new HtmlWebpackPlugin({ //HTML 파일에 번들링 된 자바스크립트 파일을 삽입해주고 이 플러그인으로 빌드하면 HTML 파일로 아웃풋에 생성
                 template: './public/index.html',
+                favicon: "./public/favicon/favicon.ico",
+                hash: true,
                 minify: process.env.NODE_ENV === 'production' ? {
                     collapseWhitespace: true, // 빈칸 제거
                     removeComments: true, // 주석 제거

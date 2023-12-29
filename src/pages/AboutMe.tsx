@@ -2,13 +2,13 @@ import styled from "styled-components";
 import { SubFont, SubFontStrong, SubPageTitle, SubTitle } from "../style/globalFont";
 import { Container, FlexColumn } from "../style/globalStyle";
 import skillDummy from '../dummy/skillData.json'; 
+import { media } from "../style/responsive";
 import mainImg from '../images/aboutImg.png';
+import DotList from "../components/DotList";
 import list01 from '../images/howWork_1.png';
 import list02 from '../images/howWork_2.png';
 import list03 from '../images/howWork_3.png';
 import list04 from '../images/howWork_4.png';
-import DotList from "../components/DotList";
-import { media } from "../style/responsive";
 
 const AboutMe = () => {
     return <AboutWrapper>
@@ -70,17 +70,19 @@ const TextWrapper = styled.div`
         position:relative;padding-top:5.8rem;
         &:after { content:'';position:absolute;left:-10.55vw;bottom:-.43em;display:block;width:65.3vw;height:.0625em;border-radius:0 .5rem .5rem 0;background-color:#EB5757; }
     }
-    img { position:absolute;right:13rem;bottom:0;z-index:-1;height:80%; }
+    img { position:absolute;right:10rem;top:5rem;height:80%; }
     p { 
         margin-top:7rem;
         ${SubFont}
-        line-height:1.6em; }
+        line-height:1.6em; 
+    }
     ${media.large} {
         h2 {
             &::after {
                 width: 68vw;
             }
         }
+        img { top:auto;bottom:0; }
     }
     ${media.small} {
         height:auto;margin-left:0;padding: 0 7rem;box-sizing:border-box;
@@ -89,7 +91,7 @@ const TextWrapper = styled.div`
                 width:80vw;left:-7rem;
             }
         }
-        img { position:static;height:50vw;margin:10rem auto 0; }
+        img { position:static;display:block;height:50vw;margin:10rem auto 0;  }
     }
 `
 
