@@ -1,16 +1,9 @@
 import styled, { createGlobalStyle,css } from "styled-components";
-import Pacifico from '../fonts/Pacifico-Regular.woff'
 import SCDream4 from '../fonts/SCDream4.woff';
 import SCDream5 from '../fonts/SCDream5.woff';
 import SCDream6 from '../fonts/SCDream6.woff';
 
 export const GlobalFonts = createGlobalStyle`
-
-    @font-face {
-        font-family: "Pacifico-400";
-        src: url(${Pacifico}) format("woff"); 
-        font-weight: 400;
-    }
     @font-face {
         font-family: "SCore-400";
         src: url(${SCDream4}) format("woff"); 
@@ -42,7 +35,7 @@ export const KorFont600 = css`
 `
 
 export const EngFont = css`
-    font-family: 'Pacifico-400',serif;font-weight:400;
+    font-family: 'Pacifico', cursive;font-weight:400;
 `
 export const SubPageTitle = styled.h2<{highlight?:string,direction?:string}>`
     ${KorFont600}

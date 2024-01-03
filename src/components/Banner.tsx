@@ -4,7 +4,7 @@ import bannerBg from "../images/bannerBg.jpg";
 import bannerBgTablet from '../images/bannerBgTablet.jpg';
 import bannerBgMobile from '../images/bannerBgMobile.jpg';
 import { KorFont600 } from "../style/globalFont";
-import { FlexColumn } from "../style/globalStyle";
+import { FlexColumn, FlexRow } from "../style/globalStyle";
 import { media } from "../style/responsive";
 
 const Banner = () => {
@@ -29,6 +29,9 @@ const BannerWapper = styled.div`
         color:#222222 !important;
     }
     p { margin:1rem 0 4rem;font-size:1.6rem;color:#777777; }
+    div { 
+        ${FlexRow} 
+    }
     ${media.medium} {
         background-image:url(${bannerBgTablet});
     }
