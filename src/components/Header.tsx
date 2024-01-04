@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { media } from "../style/responsive";
 import { FlexRow } from "../style/globalStyle";
 import MenuList from "./MenuList";
 import Logo from '../images/logo.svg';
-import { media } from "../style/responsive";
 
 const Header = () => {
     return <HeaderWrapper>
@@ -15,7 +15,7 @@ const Header = () => {
 }
 
 const HeaderWrapper = styled.header`
-    position:absolute;width: 100vw;height:10rem;z-index:1;
+    position:absolute;z-index:1;width: 100vw;height:10rem;
     ${FlexRow}
     align-items:center;justify-content: space-between;padding: 0 5rem;box-sizing:border-box;
     ${media.large} {

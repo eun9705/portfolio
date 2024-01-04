@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { CareerInfoDetailType } from "../pages/CareerDescription";
-import Badge from "./Badge";
-import { KorFont500, SubFontStrong } from "../style/globalFont";
 import { media } from "../style/responsive";
+import { KorFont500, SubFontStrong } from "../style/globalFont";
+import Badge from "./Badge";
+import { CareerInfoDetailType } from "../pages/CareerDescription";
 
 type ListInfoProps = {
     listInfo:CareerInfoDetailType

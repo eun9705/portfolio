@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import errorImgLight from '../images/errorImg_black.png';
-import errorImgDark from '../images/errorImg_white.png';
-import { KorFont600, SubFontStrong } from "../style/globalFont";
-import { FlexColumn } from "../style/globalStyle";
-import { media } from "../style/responsive";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeProvider";
+import styled from "styled-components";
+import { media } from "../style/responsive";
+import { KorFont600, SubFontStrong } from "../style/globalFont";
+import { FlexColumn } from "../style/globalStyle";
+import errorImgLight from '../images/errorImg_black.png';
+import errorImgDark from '../images/errorImg_white.png';
 
 const PageNotFound = () => {
     const { theme } = useContext(ThemeContext);

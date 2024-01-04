@@ -1,5 +1,4 @@
 import { useRouter } from '../hooks/useRouter';
-import projectDummy from '../dummy/projectData.json';
 import styled from "styled-components";
 import { media } from '../style/responsive';
 import { projectData } from '../dummy/projectData.js';
@@ -9,15 +8,9 @@ type ProjectDummy = {
     thumbnail:string;
 }
 
-const getImgUrl = (url:string) => {
-
-}
-
-
 const ProjectImageCard = () => {
     const { routerTo } = useRouter();
     return <ImageCardWrapper>
-        
         {projectData.map((item:ProjectDummy,index:number)=>{
             return <ImageBackground onClick={()=>routerTo(`/detail/${index + 1}`)} bgUrl={images[item.thumbnail]}/>
         })}
@@ -32,8 +25,11 @@ const ImageCardWrapper = styled.div`
 `
 const ImageBackground = styled.div<{bgUrl?:string}>`
     height:29.2vw;
-    background:url(${(props)=>props.bgUrl}) center / cover;
+    background:url(${(props)=>props.bgUrl}) no-repeat center / 110%;transition:background-size .5s ease-in-out;
     border-radius:1rem;cursor: pointer;overflow:hidden;
+    @media (hover:hover) and (pointer: fine){
+        &:hover { background-size:130%; }
+    }
     ${media.small} {
         height:50vw;border-radius:.4em;
         &:nth-child(odd) { margin-right:0; }

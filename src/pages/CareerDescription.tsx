@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Container } from "../style/globalStyle";
 import { KorFont500, SubFont, SubPageTitle } from "../style/globalFont";
+import { Container, GridCenter } from "../style/globalStyle";
 import careerDummy from '../dummy/careerData.json';
 import CareerList from "../components/CareerList";
 
@@ -23,9 +23,9 @@ const CareerDescription = () => {
     return <CareerDescriptionWrapper>
         <CareerConatiner>
         <SubPageTitle highlight={"#2F80ED"}>Work <span>Experience</span></SubPageTitle>
-        {careerDummy.map((item:CareerInfoType)=>{
+        {careerDummy.map((item:CareerInfoType,index:number)=>{
             return <>
-                <p className="company-name">{item.company}</p>
+                <p className="company-name" key={index}>{item.company}</p>
                 <span className="company-description">
                     {item.description}
                     <br />
@@ -44,7 +44,8 @@ const CareerDescription = () => {
 } 
 
 const CareerDescriptionWrapper = styled.div`
-    display:grid;place-items:center;width:100vw;padding:25rem 0 7rem;overflow-x:hidden;
+    ${GridCenter}
+    width:100vw;padding:25rem 0 7rem;overflow-x:hidden;
 `
 
 const CareerConatiner = styled(Container)`

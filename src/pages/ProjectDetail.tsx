@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import styled from "styled-components";
 import { useRouter } from "../hooks/useRouter";
-import { Container } from "../style/globalStyle";
-import { EngFont, KorFont500, SubFont } from "../style/globalFont";
-import Badge from "../components/Badge";
+import styled from "styled-components";
 import { media } from "../style/responsive";
-import {projectData} from '../dummy/projectData.js';
+import { EngFont, KorFont500, SubFont } from "../style/globalFont";
+import { Container, GridCenter } from "../style/globalStyle";
+import { projectData } from '../dummy/projectData.js';
 import images from '../dummy/images.js';
+import Badge from "../components/Badge";
 
 interface ProjectData {
     eng:string;
@@ -47,7 +47,7 @@ const ProjectDetail = () => {
 }
 
 const ProjectDetailWrapper = styled(Container)`
-    display: grid;place-items:center;
+    ${GridCenter}
     margin: auto;padding:20rem 0;
     h2 {
         ${KorFont500}

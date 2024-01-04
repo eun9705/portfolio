@@ -52,3 +52,8 @@ export const FlexColumn = css`
 export const Container = styled.div`
     width: 80.2vw;
 `
+
+export const GridCenter = css`
+    display: grid;
+    place-items: center;
+`

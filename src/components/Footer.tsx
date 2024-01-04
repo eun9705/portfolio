@@ -1,25 +1,20 @@
 import styled from "styled-components";
-import MenuList from "./MenuList";
-import { FlexColumn, FlexRow } from "../style/globalStyle";
-import { KorFont600 } from "../style/globalFont";
-import mailIcon from '../images/emailIcon.svg'
 import { media } from "../style/responsive";
-import theme from "../style/theme";
+import { KorFont600 } from "../style/globalFont";
+import { FlexColumn, FlexRow } from "../style/globalStyle";
+import MenuList from "./MenuList";
+import Icon from "./Icon";
 
 const Footer = () => {
     return <FooterWrapper>
         <MenuList fontSize={1.6} gap={8}/>
         <TextWrapper>
             <div>
-                {/* <MdOutlineMailOutline /> */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 28 24" fill="none">
-                    <path d="M20.4118 23H7.47059C3.58824 23 1 21.0588 1 16.5294V7.47059C1 2.94118 3.58824 1 7.47059 1H20.4118C24.2941 1 26.8824 2.94118 26.8824 7.47059V16.5294C26.8824 21.0588 24.2941 23 20.4118 23Z" stroke="#292D32" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M20.4119 8.11768L16.3613 11.353C15.0284 12.4141 12.8413 12.4141 11.5084 11.353L7.4707 8.11768" stroke="#292D32" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <Icon icon="email" width={28} height={24} />
                 <p>Contact.<strong>eun97052425@gmail.com</strong></p>
             </div>
             <span>
-                ⓒ 2023. Bae Eunkyoung. All rights reserved.<br />
+                ⓒ 2024. Bae Eunkyoung. All rights reserved.<br />
                 해당 사이트는 1920*1080해상도에 최적화 되었습니다.
             </span>
         </TextWrapper>

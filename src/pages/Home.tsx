@@ -1,23 +1,25 @@
+import { useContext, useRef } from "react";
+import { ThemeContext } from "../context/ThemeProvider";
 import styled from "styled-components";
+import { media } from "../style/responsive";
+import { EngFont } from "../style/globalFont";
 import { FlexColumn } from "../style/globalStyle";
+import useIntersectionObsever from "../hooks/useIntersectionObserver";
 import Banner from "../components/Banner";
+import ProjectImageCard from "../components/ProjectImageCard";
 import MainBgLight from '../images/mainImg_light.png';
 import MainBgDark from '../images/mainImg_dark.png';
 import OverviewBg from '../images/introduceBg.png';
-import { EngFont } from "../style/globalFont";
-import ProjectImageCard from "../components/ProjectImageCard";
-import { media } from "../style/responsive";
-import theme from "../style/theme";
-import { useContext } from "react";
-import { ThemeContext } from "../context/ThemeProvider";
 
 const Home = () => {
     const { theme } = useContext(ThemeContext);
+    const ref = useRef<HTMLDivElement>(null);
+    const isInRef = useIntersectionObsever(ref);
     return (
         <HomeWrapper>
             <MainImgWrapper className={theme === 'dark' ? 'dark' : ''}/>
-            <OverViewWrapper>
-                <p>
+            <OverViewWrapper >
+                <p ref={ref} className={isInRef ? "on" : ""}>
                     안녕하세요! 프론트엔드 개발자 배은경입니다.<br />
                     최고의 사용자 경험을 제공하는 개발자로 거듭나기 위해<br />
                     저만의 속도로 꾸준히 전진하는 중입니다.
@@ -50,7 +52,10 @@ const MainImgWrapper = styled.div`
 
 const OverViewWrapper = styled.div`
     width: 100vw;margin-top:12rem;padding-top:26vw;background:url(${OverviewBg}) no-repeat center top / 100%;
-    p { font-size:3rem;text-align:center;line-height:2em; }
+    p { 
+        font-size:3rem;text-align:center;line-height:2em;transform:translateY(20px);opacity:0;transition:1s;
+        &.on { opacity:1;transform:translateX(0); }
+    }
     
     ${media.xsmall} {
         padding-top:30vw;

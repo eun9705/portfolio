@@ -23,7 +23,7 @@
                 "title":"자사 홈페이지 개발 및 유지보수",
                 "term":"2021.08 ~ 2022.10",
                 "done": ["JWT 토큰을 통한 로그인 구현","휴대폰 본인인증 / 개인정보 수정 등 회원 관련 기능 개발","SCSS 도입하여 사용 빈도가 잦은 스타일 및 색상 정의를 통해 작업 효율 증대","주요 사용 기술"],
-                "stack": ["JavaScript","React","React-Redux","React-Router","Axios","Jquery","SCSS","Create-React-App","Git","Github","Figma","Notion"]
+                "stack": ["JavaScript","React","React-Router","Axios","Jquery","SCSS","Create-React-App","Git","Github","Figma","Notion"]
             }
         ]
     },

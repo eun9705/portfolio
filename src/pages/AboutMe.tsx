@@ -1,16 +1,20 @@
+import { useRef } from "react";
 import styled from "styled-components";
-import { SubFont, SubFontStrong, SubPageTitle, SubTitle } from "../style/globalFont";
-import { Container, FlexColumn } from "../style/globalStyle";
-import skillDummy from '../dummy/skillData.json'; 
 import { media } from "../style/responsive";
-import mainImg from '../images/aboutImg.png';
+import { SubFont, SubFontStrong, SubPageTitle, SubTitle } from "../style/globalFont";
+import { Container, FlexColumn, GridCenter } from "../style/globalStyle";
+import skillDummy from '../dummy/skillData.json'; 
+import useIntersectionObsever from "../hooks/useIntersectionObserver";
 import DotList from "../components/DotList";
+import mainImg from '../images/aboutImg.png';
 import list01 from '../images/howWork_1.png';
 import list02 from '../images/howWork_2.png';
 import list03 from '../images/howWork_3.png';
 import list04 from '../images/howWork_4.png';
 
 const AboutMe = () => {
+    const ref = useRef<HTMLDivElement>(null);
+    const isInRef = useIntersectionObsever(ref);
     return <AboutWrapper>
         <TextWrapper>
             <SubPageTitle highlight="#F2C94C">About <span>Eun Kyoung</span></SubPageTitle>
@@ -29,7 +33,7 @@ const AboutMe = () => {
         </TextWrapper>
         <HowWorkWrapper>
                 <SubTitle color={"#2F80ED"} direction={"right"}>How I <span>Work</span></SubTitle>
-                <Container>
+                <Container ref={ref} className={isInRef ? "on" : ''}>
                     <img src={list01} alt="목록1 이미지" />
                     <img src={list02} alt="목록2 이미지" />
                     <img src={list03} alt="목록3 이미지" />
@@ -105,12 +109,18 @@ const HowWorkWrapper = styled.div`
     }
     img { 
         width:53.3vw;margin-bottom:1rem;
-        &:nth-child(even) { align-self:flex-end; }
+        transform: translateX(-100%);opacity: 0;transition:1s ease-in-out;
+        &:nth-child(even) { align-self:flex-end;transform: translateX(200%); }
+    }
+    div {
+        &.on {
+           img {transform: translateX(0);opacity:1;}
+        }
     }
 `
 
 const SkillWrapper = styled.div`
-    display: grid;place-items:center;
+    ${GridCenter}
     width:100%;
     hr { height:1px;margin:4em 0 5em;background-color:#777; }
     

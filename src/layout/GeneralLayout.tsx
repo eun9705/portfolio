@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import ScrollToTop from "../components/ScrollToTop";
 
 interface GeneralLayoutProps {
     children:React.ReactNode
@@ -7,6 +8,7 @@ interface GeneralLayoutProps {
 
 const GeneralLayout = ({children}:GeneralLayoutProps) => {
     return <>
+        <ScrollToTop />
         <Header />
         {children}
         <Footer />

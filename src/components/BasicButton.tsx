@@ -1,9 +1,9 @@
 import { useRouter } from "../hooks/useRouter";
 import styled from "styled-components";
-import arrowIcon from "../images/arrowIcon.svg"
-import { KorFont500 } from "../style/globalFont";
 import { media } from "../style/responsive";
+import { KorFont500 } from "../style/globalFont";
 import { FlexRow } from "../style/globalStyle";
+import Icon from "./Icon";
 
 type BasicButtonProps = {
     name:string;
@@ -14,9 +14,7 @@ const BasicButton = ({name,url}:BasicButtonProps) => {
     const { routerTo } = useRouter();
     return <ButtonWrapper onClick={()=>routerTo(url)}>
         {name}
-        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
-            <path d="M1 13.5L5.93936 8.56061C6.5227 7.97728 6.5227 7.02274 5.93936 6.4394L1 1.5" stroke="#292D32" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <Icon icon="arrow" width={8} height={15}/>
     </ButtonWrapper>
 }
 
@@ -26,6 +24,7 @@ const ButtonWrapper = styled.button`
     ${KorFont500}
     font-size:1.6rem;
     color:#222222;
+    background-color: #FFFFFF;
     &:last-child { margin:0; }
     svg { margin-left:1.5rem; }
     ${media.xsmall} {

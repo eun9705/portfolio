@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { FlexRow } from "../style/globalStyle";
 import { media } from "../style/responsive";
+import { FlexRow } from "../style/globalStyle";
 
 type DotListProps = {
     name:string;

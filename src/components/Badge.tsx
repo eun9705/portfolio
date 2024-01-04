@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { KorFont500 } from "../style/globalFont";
 import { media } from "../style/responsive";
+import { KorFont500 } from "../style/globalFont";
 
 type BadgeProps = {
     color:string;

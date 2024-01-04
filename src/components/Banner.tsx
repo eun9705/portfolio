@@ -1,11 +1,11 @@
 import styled from "styled-components";
+import { media } from "../style/responsive";
+import { KorFont600 } from "../style/globalFont";
+import { FlexColumn, FlexRow } from "../style/globalStyle";
 import BasicButton from "./BasicButton";
 import bannerBg from "../images/bannerBg.jpg";
 import bannerBgTablet from '../images/bannerBgTablet.jpg';
 import bannerBgMobile from '../images/bannerBgMobile.jpg';
-import { KorFont600 } from "../style/globalFont";
-import { FlexColumn, FlexRow } from "../style/globalStyle";
-import { media } from "../style/responsive";
 
 const Banner = () => {
     return <BannerWapper>
