@@ -11,7 +11,7 @@ const Footer = () => {
         <TextWrapper>
             <div>
                 <Icon icon="email" width={28} height={24} />
-                <p>Contact.<strong>eun97052425@gmail.com</strong></p>
+                <p>Contact.<strong>silverccong05@gmail.com</strong></p>
             </div>
             <span>
                 ⓒ 2024. Bae Eunkyoung. All rights reserved.<br />
