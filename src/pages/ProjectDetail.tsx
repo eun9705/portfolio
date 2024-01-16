@@ -8,6 +8,8 @@ import { Container, GridCenter } from "../style/globalStyle";
 import { projectData } from '../dummy/projectData.js';
 import images from '../dummy/images.js';
 import Badge from "../components/Badge";
+import { Link } from "react-router-dom";
+import Icon from "../components/Icon";
 
 interface ProjectData {
     eng:string;
@@ -16,6 +18,8 @@ interface ProjectData {
     mockup:string[];
     overview:string;
     review:string;
+    link:string;
+    git:string
 }
 
 const ProjectDetail = () => {
@@ -36,12 +40,14 @@ const ProjectDetail = () => {
             <span>{detailInfo?.eng}</span><br />
             {detailInfo?.kor}
         </h2>
-        <img src={images[detailInfo?.mockup[0]!]} alt="프로젝트 목업 이미지 1" className="first"/>
+        <span>* 이미지 클릭시 사이트로 이동합니다!</span>
+        <Link  to={detailInfo?.link ? detailInfo.link : ""} target="_blank"><img src={images[detailInfo?.mockup[0]!]} alt="프로젝트 목업 이미지 1" className="first"/></Link>
         <Badge name={"Overview"} color={"#F2C94C"} radius={1.875} huge/>
         <p>{detailInfo?.overview}</p>
         <hr />
         <Badge name={"Review"} color={"#219653"} radius={1.875} huge/>
         <p>{detailInfo?.review}</p>
+        <Link to={detailInfo?.git ? detailInfo.git : ""} target="_blank">더 자세한 내용은 GitHub에서 확인할 수 있습니다!</Link>
         <img src={images[detailInfo?.mockup[1]!]} alt="프로젝트 목업 이미지 2" className="last"/>
     </ProjectDetailWrapper>
 }
@@ -59,15 +65,23 @@ const ProjectDetailWrapper = styled(Container)`
             ${SubFont}
         }
     }
+    > span { display:inline-block;text-align:left;width:100%;margin-top:8px; }
     img { width:100%; }
     .first { margin-bottom: .5em; }
     .last { margin-top:7.8em; }
     p { margin-top:2em;padding:0 10rem;
         ${SubFont}
-        line-height:2em;white-space:pre-wrap;text-align:center; }
+        line-height:2em;white-space:pre-wrap;text-align:center; 
+    }
+    a {
+        color:#219653; 
+        ${KorFont500}
+    }
     hr { width:100%;height:1px;margin:4em 0;background-color:#CCCCCC; }
-    ${media.xsmall} {
-        p { padding: 0; }
+    ${media.small} {
+        p {
+            padding:0;white-space:normal;
+        }
     }
 `
 
