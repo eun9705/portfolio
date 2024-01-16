@@ -101,3 +101,17 @@ src
  ┗ router.tsx
 ```
 
+#### 구조 설명
+##### useRouter 
+- useNavigate 재활용한 custom hook. 현재 url 주소를 얻거나 페이지 이동, 이전페이지로 이동 등의 함수가 정의.
+##### useIntersectionObserver
+- ref를 전달하여 해당 요소에 닿을때 className을 추가 css가 변경되도록 함.
+##### useTheme
+- Context API를 이용해 useTheme를 만들고 ThemeProvier를 만들어 사용
+##### dummy/images.js
+- json 파일에서 url을 받아올 시 이미지가 보이지 않는 현상이 반복되었고, 
+해당 오류를 해결하기 위해 images.js에 require(url).default의 형태로 이미지 url을 저장해둔뒤 
+```
+<img src={images["name"]} alt="" />
+```
+위와 같이 불러오기 위해 사용
