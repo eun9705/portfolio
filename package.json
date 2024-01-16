@@ -1,5 +1,4 @@
 {
-  "homepage": "https://eun9705.github.io/portfolio/",
   "name": "pratice_webpack",
   "version": "1.0.0",
   "description": "",
@@ -8,14 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --mode=development --open --hot --progress",
     "build": "webpack --mode=production  --progress",
-    "start": "webpack --mode=development  --progress",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "webpack --mode=development  --progress"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.19.0",
