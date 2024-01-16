@@ -1,26 +1,18 @@
 export const projectData = [
     {
-        eng:"Renewal-Portfolio",
-        kor:"포트폴리오",
+        eng:"Myflix",
+        kor:"마이플릭스",
         thumbnail:"thumbnail01",
         mockup:["mockup01","mockup02"],
-        overview:"기존 포트폴리오 사이트는 인터랙션이 많고 가독성이 떨어진다고 판단하여 새로 제작하게 되었습니다.\n불필요한 애니메이션은 제외하고, 깔끔한 UI로 개선하여 가독성을 높이는 데 중점을 두었습니다.\n또한 기존에는 JavaScript를 사용하였다면 해당 프로젝트에서는 TypeScript를 사용하여 제작하였습니다.",
-        review:"이번 프로젝트의 목표는 최대한 미디어 쿼리를 작성하지 않고 반응형을 완성하는데 중점을 두었습니다.\n기존 프로젝트에서는 주로 rem 단위만 사용하였었는데, vw,vh 등의 단위를 더 적극적으로 활용하여 반응형 웹을 만들었습니다."
+        overview:"TMDB Open API를 이용하여 Netflix와 비슷하게 구현해본 웹 서비스 입니다.\nButton, form 요소를 최대한 재사용할 수 있는 방향으로 컴포넌트를 구성해보았으며,\nReact,Recoil,Vite, Styled-components,Typescript, useRouter, useScroll, useDebounce custom hook을 사용하여 구현하였습니다.",
+        review:"이번 프로젝트에서는 webpack을 직접 설정하지 않고 vite를 사용해서 프로젝트를 만들어보았습니다.\nwebpack 비해 vite는 설정 아주 편리했습니다."
     },
     {
-        eng:"Movie Search",
-        kor:"무비서치",
+        eng:"Renewal-Portfolio",
+        kor:"포트폴리오",
         thumbnail:"thumbnail02",
         mockup:["mockup03","mockup04"],
-        overview:"KMDb Open API를 사용한 영화 검색 서비스입니다.\n검색 옵션(제목 명, 감독 명)을 두어 조금 더 정확한 정보를 가져올 수 있도록 하였습니다.\n또한 TypeScript을 사용하여 변수나 state 값 등을 명시적으로 보여주는 데 중점을 두었습니다.",
-        review:"지난번 프로젝트 때 Styled-Components를 사용하였고, 둘의 차이를 조금 더 잘 정리할 수 있으면 좋겠다고 생각하여,\n이번 프로젝트에서는 다시 CSS-in-CSS 방식을 사용했습니다. \n확실히 저번 프로젝트와 비교해서 명시적으로 클래스네임을 정하려고 고민하는 시간이 꽤 된다는 것을 느꼈습니다.\n 그래서 CSS-in-JS의 장점을 확실히 더 느끼게 되었습니다.\n또한 이번 프로젝트에서 처음으로 TypeScript를 사용해보았습니다.\n큰 데이터가 오고 가는 것은 아니지만, 연습 삼아 타입들을 명시적으로 정리하는 것에 의의를 두었습니다.\n그리고 조금 더 다양한 환경에서 적용해 볼 수 있는 날이 왔으면 좋겠다고 생각한 프로젝트였습니다."
-    },
-    {
-        eng:"Ex-Portfolio",
-        kor:"포트폴리오",
-        thumbnail:"thumbnail03",
-        mockup:["mockup05","mockup06"],
-        overview:"그동안 제작했던 사이드 프로젝트들을 한눈에 모아볼 수 있도록 하는 용도로 제작되었습니다.\nCSS-in-CSS 방식은 scss를 통해 많이 접해보았기 때문에 해당 프로젝트에서는 CSS-in-JS 방식을 사용하기로 계획,\n가장 대표적인 라이브러리인 Styled-Components를 사용하게 되었습니다.",
-        review:"CSS-in-CSS 방식으로만 퍼블리싱을 해보았었는데 CSS-in-JS를 사용해봐서 새로웠습니다.\n일단 가장 편했던 것은 클래스네임을 고민하지 않아도 된다는 것이었습니다.\n또한 css 파일을 오가지 않고 한 파일 내에서 스타일 체크가 가능하다는 것도 큰 장점이라고 느꼈습니다.\n아직 큰 단점은 느끼지 못했지만, CSS-in-JS의 특성상 컴포넌트가 렌더링 될 때마다 스타일 정보를 가져와 컴포넌트 상태 값 전환이 활발한 동적인 웹사이트라면 추가적인 렌더링이 많다는 단점이 있다고 한다는 것을 알게 되었습니다."
+        overview:"개인 작업물을 확인할 수 있는 포트폴리오 모음 사이트 입니다.",
+        review:"이번 프로젝트의 목표는 최대한 미디어 쿼리를 작성하지 않고 반응형을 완성하는데 중점을 두었습니다.\n기존 프로젝트에서는 주로 rem 단위만 사용하였었는데, vw,vh 등의 단위를 더 적극적으로 활용하여 반응형 웹을 만들었습니다."
     }
 ]

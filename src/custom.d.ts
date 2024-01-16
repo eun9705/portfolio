@@ -1,6 +1,7 @@
 /* font declare */
 declare module '*.woff';
 /* image declare */
+declare module '*.webp';
 declare module '*.png';
 declare module '*.jpg';
 declare module '*.jpeg';

@@ -35,7 +35,7 @@ module.exports = (env, argv) => {
                     ]
                 },
                 {
-                    test: /\.(woff|woff2)$/,
+                    test: /\.(woff|woff2|webp)$/,
                     use: [
                         { loader: 'url-loader' }
                     ]
